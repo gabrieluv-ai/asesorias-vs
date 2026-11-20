@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Asesorías VS | Contabilidad, Tributación y Capacitación</title>
+
+<meta name="description" content="Servicios contables, asesoría tributaria y cursos prácticos para emprendedores y empresas. Aprende F29 y mantén tu negocio al día.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--azul:#0F4C81;
+--azul-claro:#1A75BC;
+--gris:#374151;
+--fondo:#F5F7FA;
+--blanco:#FFFFFF;
+--verde:#25D366;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--fondo);
+color:#333;
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:white;
+box-shadow:0 3px 15px rgba(0,0,0,0.08);
+z-index:1000;
+}
+
+.nav-container{
+max-width:1200px;
+margin:auto;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo-img{
+height:60px;
+width:auto;
+}
+
+.menu{
+display:flex;
+gap:25px;
+}
+
+.menu a{
+text-decoration:none;
+color:var(--gris);
+font-weight:500;
+}
+
+.menu a:hover{
+color:var(--azul);
+}
+
+.hero{
+background:linear-gradient(135deg,var(--azul),var(--azul-claro));
+min-height:100vh;
+display:flex;
+align-items:center;
+padding:120px 20px 80px;
+color:white;
+}
+
+.hero-content{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.hero-text h1{
+font-size:3rem;
+line-height:1.2;
+margin-bottom:20px;
+}
+
+.hero-text p{
+font-size:1.1rem;
+margin-bottom:30px;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 25px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn-primary{
+background:white;
+color:var(--azul);
+}
+
+.btn-secondary{
+background:transparent;
+border:2px solid white;
+color:white;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.hero-card{
+background:white;
+color:#333;
+padding:35px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.hero-card h3{
+color:var(--azul);
+margin-bottom:20px;
+}
+
+.hero-card p{
+margin-bottom:10px;
+}
+
+section{
+padding:90px 20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.section-header{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-header h2{
+color:var(--azul);
+font-size:2.3rem;
+margin-bottom:10px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.card h3{
+color:var(--azul);
+margin-bottom:15px;
+}
+
+.curso{
+background:linear-gradient(135deg,var(--azul),#0b3050);
+color:white;
+padding:50px;
+border-radius:20px;
+text-align:center;
+}
+
+.curso h3{
+font-size:2rem;
+margin-bottom:20px;
+}
+
+.curso ul{
+list-style:none;
+margin:25px 0;
+}
+
+.curso li{
+margin-bottom:10px;
+}
+
+.testimonios{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.testimonio{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.blog-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.blog-item{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+form{
+background:white;
+padding:35px;
+border-radius:15px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+input,
+textarea{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border:1px solid #D9D9D9;
+border-radius:8px;
+}
+
+button{
+width:100%;
+padding:15px;
+background:var(--azul);
+color:white;
+border:none;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+font-weight:600;
+}
+
+button:hover{
+background:#0b3050;
+}
+
+footer{
+background:#111827;
+color:white;
+padding:50px 20px;
+text-align:center;
+}
+
+.whatsapp{
+position:fixed;
+right:25px;
+bottom:25px;
+width:65px;
+height:65px;
+background:var(--verde);
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:32px;
+text-decoration:none;
+color:white;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+z-index:999;
+}
+
+@media(max-width:900px){
+
+.hero-content,
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+.hero-text h1{
+font-size:2.1rem;
+}
+
+.menu{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<div class="nav-container">
+
+<img src="logo-vs.png" alt="Asesorías VS" class="logo-img">
+
+<div class="menu">
+<a href="#servicios">Servicios</a>
+<a href="#academia">Academia</a>
+<a href="#blog">Blog</a>
+<a href="#contacto">Contacto</a>
+</div>
+
+</div>
+</nav>
+
+<header class="hero">
+
+<div class="hero-content">
+
+<div class="hero-text">
+
+<h1>
+Contabilidad, Tributación y Formación para Emprendedores
+</h1>
+
+<p>
+Ayudamos a empresas y emprendedores a cumplir correctamente sus obligaciones tributarias y a comprender el sistema tributario chileno mediante asesoría profesional y capacitación práctica.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#contacto" class="btn btn-primary">
+Solicitar Asesoría
+</a>
+
+<a href="#academia" class="btn btn-secondary">
+Ver Cursos
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<h3>¿Cómo podemos ayudarte?</h3>
+
+<p>✅ Contabilidad mensual</p>
+<p>✅ Declaraciones F29</p>
+<p>✅ Declaraciones de renta</p>
+<p>✅ Declaraciones juradas</p>
+<p>✅ Remuneraciones</p>
+<p>✅ Asesoría frente al SII</p>
+<p>✅ Cursos tributarios online</p>
+
+</div>
+
+</div>
+
+</header>
+
+<section id="servicios">
+
+<div class="container">
+
+<div class="section-header">
+<h2>Servicios Profesionales</h2>
+<p>Apoyo contable y tributario para empresas, pymes y emprendedores.</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Contabilidad Mensual</h3>
+<p>Registro, análisis y control financiero para mantener tu empresa al día.</p>
+</div>
+
+<div class="card">
+<h3>Tributación</h3>
+<p>Declaraciones F29, renta anual, IVA y cumplimiento tributario.</p>
+</div>
+
+<div class="card">
+<h3>Remuneraciones</h3>
+<p>Liquidaciones de sueldo, contratos, finiquitos y Previred.</p>
+</div>
+
+<div class="card">
+<h3>Asesoría Empresarial</h3>
+<p>Inicio de actividades, estructura tributaria y acompañamiento permanente.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="academia">
+
+<div class="container">
+
+<div class="curso">
+
+<h3>Curso Formulario 29 desde Cero</h3>
+
+<p>
+Aprende a preparar y revisar correctamente el Formulario 29 del SII.
+</p>
+
+<ul>
+<li>✓ IVA Débito Fiscal</li>
+<li>✓ IVA Crédito Fiscal</li>
+<li>✓ PPM</li>
+<li>✓ Honorarios</li>
+<li>✓ Casos prácticos</li>
+<li>✓ Material descargable</li>
+<li>✓ Ejercicios paso a paso</li>
+</ul>
+
+<a href="#contacto" class="btn btn-primary">
+Reservar Cupo
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-header">
+<h2>¿Por qué elegir Asesorías VS?</h2>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Experiencia</h3>
+<p>Más de 20 años de experiencia en contabilidad y tributación.</p>
+</div>
+
+<div class="card">
+<h3>Lenguaje Claro</h3>
+<p>Explicamos conceptos tributarios complejos de manera sencilla.</p>
+</div>
+
+<div class="card">
+<h3>Capacitación</h3>
+<p>No solo resolvemos problemas, también enseñamos a comprenderlos.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="blog">
+
+<div class="container">
+
+<div class="section-header">
+<h2>Recursos Gratuitos</h2>
+</div>
+
+<div class="blog-grid">
+
+<div class="blog-item">
+<h3>Cómo presentar un F29 correctamente</h3>
+</div>
+
+<div class="blog-item">
+<h3>Errores frecuentes ante el SII</h3>
+</div>
+
+<div class="blog-item">
+<h3>Qué hacer si olvidaste declarar IVA</h3>
+</div>
+
+<div class="blog-item">
+<h3>Diferencias entre IVA Débito e IVA Crédito</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-header">
+<h2>Opiniones de Clientes</h2>
+</div>
+
+<div class="testimonios">
+
+<div class="testimonio">
+"Excelente asesoría y explicaciones muy claras."
+</div>
+
+<div class="testimonio">
+"Ordenamos completamente nuestros procesos tributarios."
+</div>
+
+<div class="testimonio">
+"El curso F29 fue práctico y fácil de entender."
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contacto">
+
+<div class="container">
+
+<div class="section-header">
+<h2>Contáctanos</h2>
+<p>Solicita una asesoría o consulta sobre nuestros cursos.</p>
+</div>
+
+<div class="contact-grid">
+
+<form action="https://formsubmit.co/villarroel.saez@outlook.com" method="POST">
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="Nuevo contacto desde Asesorías VS">
+
+<input type="text" name="nombre" placeholder="Nombre" required>
+
+<input type="email" name="email" placeholder="Correo electrónico" required>
+
+<input type="text" name="telefono" placeholder="Teléfono">
+
+<input type="text" name="empresa" placeholder="Empresa">
+
+<textarea name="mensaje" rows="6" placeholder="Escribe tu consulta"></textarea>
+
+<button type="submit">
+Enviar Consulta
+</button>
+
+</form>
+
+<div>
+
+<h3>Información de Contacto</h3>
+
+<br>
+
+<p><strong>Correo:</strong> villarroel.saez@outlook.com</p>
+
+<br>
+
+<p><strong>WhatsApp:</strong> +56 9 3204 8493</p>
+
+<br>
+
+<p><strong>Ubicación:</strong> Quillota, Región de Valparaíso</p>
+
+<br>
+
+<p>
+Asesoramos empresas de todo Chile de forma presencial y remota.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Asesorías VS</h3>
+
+<br>
+
+<p>Contabilidad • Tributación • Capacitación</p>
+
+<br>
+
+<p>
+Transformamos obligaciones tributarias en decisiones informadas.
+</p>
+
+<br>
+
+<p>
+© 2026 Asesorías VS. Todos los derechos reservados.
+</p>
+
+</footer>
+
+<a
+class="whatsapp"
+href="https://wa.me/56932048493"
+target="_blank">
+💬
+</a>
+
+</body>
+</html>
